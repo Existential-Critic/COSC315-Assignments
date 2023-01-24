@@ -2,7 +2,12 @@
 #include <stdlib.h>
 
 int main() {
-    // 1. Get the number of inputs from the user
+    // Initialise the variable which will contain how many numbers we are working with.
+    int numNums;
+    // Print the message asking for the amount of numbers.
+    printf("Enter how many numbers you wish to use: ");
+    // Take in the next entered integer and save it to numNums.
+    scanf("%d",&numNums);
 
     // 2. Read the number of inputs from the user
     // You will need to use an array to handle all of the inputs.
