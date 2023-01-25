@@ -45,5 +45,9 @@ int main() {
     // Finish by printing a new line.
     printf("\n");
 
+    // Free the memory spaces of the arrays.
+    free(arrRandom);
+    free(arrCharCast);
+
     return 0;
 }
