@@ -9,14 +9,33 @@ int main() {
     // Take in the next entered integer and save it to numNums.
     scanf("%d",&numNums);
 
-    // 2. Read the number of inputs from the user
-    // You will need to use an array to handle all of the inputs.
-    // Basic array can be defined as such: int a[int_length]
+    // Initialise the array of the size provided previously.
+    int arrNum[numNums];
+    // Print the message asking for a number of integers as provided above.
+    printf("Enter %d numbers separated by spaces: ", numNums);
+    // Create a for loop that will iterate through the array and insert numbers as entered.
+    for(int i = 0;i < numNums;i++) {
+        scanf("%d",&arrNum[i]);
+    }
 
-    // 3. Calculate the min, max, sum and average
-    // Make sure to cast ints to floats for proper decimal output
+    // Initialise variables to contain the numbers we need.
+    int minLoc = 0, maxLoc = 0;
+    float sum = 0.0, avg;
+    // Iterate through the array and calculate the minimum/maximum locations and the sum of the array.
+    for(int i = 0;i < numNums;i++) {
+        if(arrNum[i] > arrNum[maxLoc]) {
+            maxLoc = i;
+        }
+        if(arrNum[i] < arrNum[minLoc]) {
+            minLoc = i;
+        }
+        sum += arrNum[i];
+    }
+    // With the sum, calculate the average of the array.
+    avg = sum/numNums;
 
-    // 4. Correctly print the stats
+    // Print the calculated statistics of the array.
+    printf("Min: %d, Max: %d, Sum: %.0f, Avg: %.2f\n",arrNum[minLoc],arrNum[maxLoc],sum,avg);
 
     return 0;
 }
