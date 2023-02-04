@@ -1,1 +1,6 @@
 Provide your answer for Q2 here:
+Part A
+The malloc() function creates a fixed size block of memory for a function but doesn’t initialize it. While the calloc() function allocates and initializes more than one block of memory to a single variable.
+
+Part B
+malloc() is faster than calloc() because it doesn’t take extra steps to initialize the memory that it allocates
