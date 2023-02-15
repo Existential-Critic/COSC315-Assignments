@@ -9,14 +9,11 @@ void add_arrays(int* result, int* a, int* b, int array_size) {
 	// Add a + b together and store in the result array.
     // DO NOT create any local variables in this function.
     // +4
-    // Iterate through the array using a pointer; if this counts as a local variable I got nothing chief
-    for(int *p = a; a < (p+array_size);) {
-        // Set the place the pointer points to equal the sum of the other two pointer places
-        *result = (*a + *b);
-        // Increment each pointer
-        result++;
-        a++;
-        b++;
+    // Iterate through the arrays using array_size and fill each space of result with the sum of a and b.
+    while(array_size >= 0) {
+        result[array_size] = a[array_size] + b[array_size];
+        // Decrement array_size to continue the loop.
+        array_size--;
     }
 }
 
@@ -27,12 +24,11 @@ void rand_init(int* a, int array_size) {
     // +2
     int range_start = 0;
     int range_end = 9;
-    // Iterate through the memory allocated and fill with random numbers
-    for(int *p = a;a < (p+array_size);) {
-        // Generate a random integer between the start and end of the range
-        *a = (rand() % (range_end - range_start + 1)) + range_start;
-        // Increment the pointer
-        a++;
+    // Iterate through the memory allocated using array_size and fill each space in the array.
+    while(array_size >= 0) {
+        a[array_size] = (rand() % (range_end - range_start + 1)) + range_start;
+        // Decrement array_size to continue the loop.
+        array_size--;
     }
 }
 
