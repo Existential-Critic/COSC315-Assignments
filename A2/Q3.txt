@@ -1,3 +1,5 @@
 A): In Q2, replace rand_r with rand. Is there a difference in total initialization runtime? If so, why?
-
+There is a difference in total initial initialization time. With rand_r it was 916.34 ms and with rand total initialization time was 34140.35 ms. This is because of the fact that rand_r is the reentrant version of rand, meaning it allows random numbers to be generated simultaineously, cutting down initialization time.
+ 
 B) In Q2, is your add operation faster or slower than the code for Q1? Why or why not?
+Generally the add function in Q1 is slightly faster than in Q2 but not by much, this is because while threads make it faster, the additional overhead cancels out all the saved time. 
