@@ -1,5 +1,9 @@
 # COSC 315: Assignment 3
 
+## Soren Stenback and Baz Sivakua
+
+---
+
 In this assignment, you will work towards creating a producer-consumer application using synchronization concepts discussed in class.
 
 Before getting started, please ensure you have a working starter environment with Docker using the COSC 315 starter code available [here](https://github.com/brikwerk/cosc315-starter). If you have not set this up yet, please follow the instructions available in the starter code repository before working on this assignment.
@@ -44,8 +48,26 @@ For Java development, you are free to use your own development environment.
 
 For C development, you are required to continue developing inside the Docker container.
 
-## Instructions
+## Implementation
 
-### Implementation
+### P1 - Java
 
-### Build
+For the Java component, the multithreading and bounded buffer were implemented using custom classes and the Runnable package.
+
+The Request class is constructed in such a way to be an object that contains an ID and a time duration. A single constructor is included to set these variables.
+
+The BoundedBuffer class is set to use objects of type T, which is set when creating the buffer. The class includes the buffer variable itself, int variables for the count of items, the producer location, and the consumer locations, as well as two objects to use as locks. For methods, there is a constructor to set the maximum length of the buffer. There is also a produce method to call the producer lock and check if the buffer is full, and then run the producer itself. Once complete, it will call the consumer lock to allow the consumers to run. The consume method will call the consumer lock to see if the buffer is empty, and then run the consumer. Once complete, it will call the producer lock to tell it that there is an open space. There are helper methods written to check if the buffer is full, empty, and to run the producer and consumers.
+
+The Producer class implements the Runnable package, and contains the variables for the BoundedBuffer of type Request, the maximum time a request can have, the minimum time a request can have, and an incrementing request ID. A constructor is included to set the buffer to an existing variable. There is a single method, run(), which calls the start time and then runs repeatedly to create new requests and add them to the buffer and print their information.
+
+The Consumer class also implements the Runnable package, and contains the variables of the Bounded Buffer and the consumer's own ID. The constructor sets both of these to existing variables. The run() method starts a timer and then takes a request out of the buffer and prints its information.
+
+### P2 - C
+
+## Build
+
+### P1 - Java
+
+To compile and run P1.java, open it in your IDE (VSCode preferably) and execute the file.
+
+### P2 - C
