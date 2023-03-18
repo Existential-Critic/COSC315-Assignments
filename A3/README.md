@@ -71,3 +71,5 @@ The Consumer class also implements the Runnable package, and contains the variab
 To compile and run P1.java, open it in your IDE (VSCode preferably) and execute the file.
 
 ### P2 - C
+
+To compile and run P2.c,  open it in your IDE (VSCode preferably), have the docker container outlined in previous assignments open and execute the file.
