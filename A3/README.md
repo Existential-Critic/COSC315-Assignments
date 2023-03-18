@@ -64,6 +64,12 @@ The Consumer class also implements the Runnable package, and contains the variab
 
 ### P2 - C
 
+The C implementation of the Producer-Consumer code uses a multi-threaded program that implements semaphores to synchronize access to the shared buffer. The program initializes a semaphore for the producer and consumers; these indicate the number of empty and full slots in the buffer. The producer thread generates a request with a unique ID and a random length and then adds it to the buffer. Each consumer thread reads a request from the buffer, processes it, and then removes it from the buffer. 
+
+The producer function generates a request and adds it to the buffer using sem_wait and sem_post operations to ensure that the buffer is not full before adding a new request. It then prints a message indicating the request ID, length, and time elapsed before sleeping for one second.
+
+The consumer function reads a request from the buffer using sem_wait and sem_post operations to ensure that the buffer is not empty before reading a request. It then prints a message indicating the request ID, length, and time elapsed before sleeping for the length of the request. Finally, it prints a message indicating that the request has been completed.
+
 ## Build
 
 ### P1 - Java
